@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Complete Responsive Online Study Website Design Tutorial</title>
+    <title>{{ title }}</title>
 
     <!-- google fonts cdn link  -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -36,6 +36,7 @@
             <li><a href="#course">course</a></li>
             <li><a href="#teacher">teacher</a></li> -->
             <li><a href="#contact">Bog'lanish</a></li>
+            <li><a href="">tizimda {{ countWords }} ta so'z bor!</a></li>
         </ul>
     </nav>
 
@@ -75,16 +76,17 @@
     </form>
 
 
-    <h1>{{ word_list.count }} </h1>
+    <h1>
         <p>
             <ul>
               {% for word in word_list %}
                 <li>
-                  {{ word.name }}, {{ word.description }}
+                  {{ word.name }} - {{ word.description }}
                 </li>
               {% endfor %}
             </ul>
         </p>
+    </h1>
     <div class="shape"></div>
 
 </section>

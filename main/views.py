@@ -6,12 +6,14 @@ from .models import Word
 
 
 class HomePageView(TemplateView):
+    extra_context = {'title': 'Bosh sahifa', 'countWords': Word.objects.all().count()}
     template_name = 'main/index.html'
 
 
 class SearchResultsView(ListView):
     model = Word
     template_name = 'main/index.html'
+    extra_context = {'title':'Bosh sahifa', 'countWords': Word.objects.all().count()}
 
     def get_queryset(self):
         query = self.request.GET.get("q")
